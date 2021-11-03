@@ -1,3 +1,8 @@
-const message: string = 'Hello, World!';
+function closures(firstName: string): (secondName: string) => string  {
+    return function (secondName: string) {
+        return `${firstName} ${secondName}`;
+    }
+}
 
-window.alert(message);
+const userFullName = closures('Alex')('Miller');
+console.debug(userFullName);
